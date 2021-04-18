@@ -73,6 +73,12 @@ const Login: React.FC = (props: any) => {
       >
         {isLogin ? 'login' : 'register'}
       </Button>
+      <br />
+      <Typography align="center">
+        <span onClick={() => setIsLogin(!isLogin)}>
+          {isLogin ? 'Create new account ?' : 'Back to login'}
+        </span>
+      </Typography>
     </div>
   );
 };
