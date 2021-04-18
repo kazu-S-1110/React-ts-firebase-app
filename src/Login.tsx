@@ -15,7 +15,7 @@ const Login: React.FC = (props: any) => {
   }, [props.histroy]);
 
   return (
-    <div>
+    <div className={styles.login__root}>
       <h1>{isLogin ? 'Login' : 'Register'}</h1>
       <br />
       <FormControl>
