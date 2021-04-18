@@ -31,6 +31,7 @@ const Login: React.FC = (props: any) => {
           }}
         />
       </FormControl>
+      <br />
       <FormControl>
         <TextField
           InputLabelProps={{
@@ -45,6 +46,33 @@ const Login: React.FC = (props: any) => {
           }}
         />
       </FormControl>
+      <br />
+      <Button
+        variant="contained"
+        color="primary"
+        size="medium"
+        onClick={
+          isLogin
+            ? async () => {
+                try {
+                  await auth.signInWithEmailAndPassword(email, password);
+                  props.history.push('/');
+                } catch (error) {
+                  alert(error.message);
+                }
+              }
+            : async () => {
+                try {
+                  await auth.createUserWithEmailAndPassword(email, password);
+                  props.history.push('/');
+                } catch (error) {
+                  alert(error.message);
+                }
+              }
+        }
+      >
+        {isLogin ? 'login' : 'register'}
+      </Button>
     </div>
   );
 };
