@@ -58,6 +58,7 @@ const App: React.FC = (props: any) => {
           }
         }}
       >
+        c
         <ExitToAppIcon />
       </button>
       <br />
